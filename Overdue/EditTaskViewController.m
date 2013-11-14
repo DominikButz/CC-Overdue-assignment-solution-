@@ -10,6 +10,7 @@
 
 @interface EditTaskViewController ()
 
+
 @end
 
 @implementation EditTaskViewController
@@ -27,6 +28,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.taskTitleTextField.text = self.task.title;
+    self.taskDescriptionTextField.text = self.task.description;
+    self.datePicker.date = self.task.date;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,5 +42,15 @@
 }
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
+   
+    // update task-properties with user input:
+    self.task.title = self.taskTitleTextField.text;
+    self.task.description = self.taskDescriptionTextField.text;
+    self.task.date =self.datePicker.date;
+    
+    [self.delegate didUpdateTask:self.task];
+       
+  // insert method call to delegate method didPressSavebutton!
 }
+
 @end

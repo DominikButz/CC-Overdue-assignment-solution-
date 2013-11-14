@@ -29,6 +29,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    
+    
     self.TitleLabel.text = self.task.title;
     
     self.DescriptionLabel.text = self.task.description;
@@ -45,6 +47,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (IBAction)editButtonPressed:(UIBarButtonItem *)sender {
     
     [self performSegueWithIdentifier:@"toEditTaskVC" sender:sender];
@@ -56,6 +60,8 @@
     
     if ([segue.destinationViewController isKindOfClass:[EditTaskViewController class]]) {
         
+        
+        
         EditTaskViewController *editVC = segue.destinationViewController;
         
         // hand over the task object to the editVC:
@@ -66,6 +72,7 @@
         editVC.path = self.path;
         
         
+        editVC.delegate = self;
         
         
     }
@@ -90,4 +97,38 @@
     return formattedDate;
     
 }
+
+
+-(NSDictionary *) TaskObjectAsPropertyList: (TaskObject*)taskObject;{
+    NSDictionary *dictionary = @{TASK_TITLE: taskObject.title, TASK_DESCRIPTION: taskObject.description, TASK_DUEDATE: taskObject.date, TASK_COMPLETED: @(taskObject.completed)};
+    
+    return dictionary;
+    
+    
+}
+
+
+
+#pragma  mark - EditTaskVCDelegate:
+
+-(void)didUpdateTask:(TaskObject *)task {
+    // load existing array from NSUserdefaults:
+    NSMutableArray *tasksAsPropertyLists = [[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_LIST] mutableCopy];
+    
+    //convert updated task to NSDic:
+    NSDictionary *taskAsPropertyList = [self TaskObjectAsPropertyList:task];
+    
+    //replace updated NSDic-task-object at the indexPath we got from the MainTableVC:
+    [tasksAsPropertyLists replaceObjectAtIndex:self.path.row withObject:taskAsPropertyList];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:tasksAsPropertyLists forKey:TASK_LIST];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    //[self.view reloadInputViews];
+    
+}
+
+
+
+
 @end

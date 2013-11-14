@@ -78,7 +78,7 @@
     }
     
     
-    if ([segue.destinationViewController isKindOfClass:[TaskDetailsVCViewController class]]) {
+    else if ([segue.destinationViewController isKindOfClass:[TaskDetailsVCViewController class]]) {
         
         TaskDetailsVCViewController *targetVC = segue.destinationViewController;
         

@@ -10,10 +10,21 @@
 #import "TaskDetailsVCViewController.h"
 #import "TaskObject.h"
 
+@protocol EditTaskViewControllerDelegate <NSObject>
+
+
+-(void)didUpdateTask:(TaskObject *) task;
+
+@end
+
 @interface EditTaskViewController : UIViewController
 
+@property (weak, nonatomic) id <EditTaskViewControllerDelegate> delegate;
+
+//need these two properties because need to take over objects from TaskDetailsVC:
 @property (strong, nonatomic) TaskObject * task;
 @property (strong, nonatomic) NSIndexPath *path;
+
 @property (strong, nonatomic) IBOutlet UITextField *taskTitleTextField;
 @property (strong, nonatomic) IBOutlet UITextView *taskDescriptionTextField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;

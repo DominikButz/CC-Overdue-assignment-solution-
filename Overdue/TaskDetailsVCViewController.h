@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "TaskObject.h"
+#import "EditTaskViewController.h"
 
-@interface TaskDetailsVCViewController : UIViewController
+
+@interface TaskDetailsVCViewController : UIViewController <EditTaskViewControllerDelegate>
+
+
 @property (strong, nonatomic) IBOutlet UILabel *TitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *DateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *DescriptionLabel;

@@ -23,7 +23,7 @@
 @property (weak, nonatomic) id <AddTaskViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UITextField *addTaskTitleField;
-@property (strong, nonatomic) IBOutlet UITextView *addTastDescriptionField;
+@property (strong, nonatomic) IBOutlet UITextView *addTaskDescriptionField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *addTaskDatePicker;
 
 - (IBAction)addTaskCancelButtonPressed:(UIBarButtonItem *)sender;

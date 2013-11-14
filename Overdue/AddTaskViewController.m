@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.addTastDescriptionField.delegate = self;
+    self.addTaskDescriptionField.delegate = self;
     
     
 }
@@ -74,7 +74,7 @@
     TaskObject *task = [[TaskObject alloc] init];
     
     task.title =self.addTaskTitleField.text;
-    task.description = self.addTastDescriptionField.text;
+    task.description = self.addTaskDescriptionField.text;
     task.date = self.addTaskDatePicker.date;
     task.completed = NO;
     
@@ -92,7 +92,7 @@
     
     if ([text isEqualToString:@"\n"]) {
         //method resignFirstResponder makes keyboard disappear - will only disappear after user taps return
-        [self.addTastDescriptionField resignFirstResponder];
+        [self.addTaskDescriptionField resignFirstResponder];
         
         return NO;
     }
