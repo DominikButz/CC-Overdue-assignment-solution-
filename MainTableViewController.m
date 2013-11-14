@@ -95,6 +95,8 @@
         targetVC.task = selectedObject;
         targetVC.path = path;
         
+        //set delegate to self because need to refresh table view after editing and saving! See below method: updateTask
+        targetVC.delegate = self;
         
     }
     
@@ -368,6 +370,13 @@
     [self.tableView reloadData];
     
    
+}
+
+#pragma - TaskDetailsVCDelegate:
+
+-(void) updateTask{
+    
+    [self.tableView reloadData];
 }
 
 

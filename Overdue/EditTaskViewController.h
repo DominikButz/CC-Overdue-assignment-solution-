@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TaskDetailsVCViewController.h"
 #import "TaskObject.h"
 
 @protocol EditTaskViewControllerDelegate <NSObject>
 
-
--(void)didUpdateTask:(TaskObject *) task;
+@required
+-(void) didUpdateTask:(TaskObject *) task;
 
 @end
+
 
 @interface EditTaskViewController : UIViewController
 
@@ -33,3 +33,4 @@
 
 
 @end
+

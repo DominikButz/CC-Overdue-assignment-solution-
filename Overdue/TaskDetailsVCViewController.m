@@ -112,6 +112,15 @@
 #pragma  mark - EditTaskVCDelegate:
 
 -(void)didUpdateTask:(TaskObject *)task {
+    
+    //update labels after editing:
+    self.TitleLabel.text = task.title;
+    self.DescriptionLabel.text = task.description;
+    self.DateLabel.text = [self dateAsString:task.date];
+    
+    
+    
+    
     // load existing array from NSUserdefaults:
     NSMutableArray *tasksAsPropertyLists = [[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_LIST] mutableCopy];
     
@@ -124,7 +133,12 @@
     [[NSUserDefaults standardUserDefaults] setObject:tasksAsPropertyLists forKey:TASK_LIST];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-    //[self.view reloadInputViews];
+    
+    //pops the editTaskVC from the stack
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    //following method implemented in MainTableVC to reload data after editing:
+    [self.delegate updateTask];
     
 }
 

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AddTaskViewController.h"
+#import "TaskDetailsVCViewController.h"
 
-@interface MainTableViewController : UITableViewController <AddTaskViewControllerDelegate>
+// for reloading data (after editing), need to conform to TaskDetailsVCDelegate, too:
+@interface MainTableViewController : UITableViewController <AddTaskViewControllerDelegate, TaskDetailsVCDelegate>
 
 
 
