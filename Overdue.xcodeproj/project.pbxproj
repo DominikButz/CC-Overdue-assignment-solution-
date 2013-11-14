@@ -14,13 +14,17 @@
 		B4635DCE182F177100B7078A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4635DCD182F177100B7078A /* main.m */; };
 		B4635DD2182F177100B7078A /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4635DD1182F177100B7078A /* CCAppDelegate.m */; };
 		B4635DD5182F177100B7078A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4635DD3182F177100B7078A /* Main.storyboard */; };
-		B4635DD8182F177100B7078A /* CCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4635DD7182F177100B7078A /* CCViewController.m */; };
 		B4635DDA182F177100B7078A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4635DD9182F177100B7078A /* Images.xcassets */; };
 		B4635DE1182F177100B7078A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4635DE0182F177100B7078A /* XCTest.framework */; };
 		B4635DE2182F177100B7078A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4635DC1182F177100B7078A /* Foundation.framework */; };
 		B4635DE3182F177100B7078A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4635DC5182F177100B7078A /* UIKit.framework */; };
 		B4635DEB182F177100B7078A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B4635DE9182F177100B7078A /* InfoPlist.strings */; };
 		B4635DED182F177100B7078A /* OverdueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4635DEC182F177100B7078A /* OverdueTests.m */; };
+		B4635DF8182F186200B7078A /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4635DF7182F186200B7078A /* MainTableViewController.m */; };
+		B4635DFB182F18AD00B7078A /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4635DFA182F18AD00B7078A /* AddTaskViewController.m */; };
+		B4635E03182F278100B7078A /* TaskObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B4635E02182F278100B7078A /* TaskObject.m */; };
+		B4635E061833843A00B7078A /* TaskDetailsVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4635E051833843A00B7078A /* TaskDetailsVCViewController.m */; };
+		B4635E0918346FBA00B7078A /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4635E0818346FBA00B7078A /* EditTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +49,22 @@
 		B4635DD0182F177100B7078A /* CCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
 		B4635DD1182F177100B7078A /* CCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
 		B4635DD4182F177100B7078A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B4635DD6182F177100B7078A /* CCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
-		B4635DD7182F177100B7078A /* CCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCViewController.m; sourceTree = "<group>"; };
 		B4635DD9182F177100B7078A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B4635DDF182F177100B7078A /* OverdueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OverdueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4635DE0182F177100B7078A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B4635DE8182F177100B7078A /* OverdueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OverdueTests-Info.plist"; sourceTree = "<group>"; };
 		B4635DEA182F177100B7078A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B4635DEC182F177100B7078A /* OverdueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverdueTests.m; sourceTree = "<group>"; };
+		B4635DF6182F186200B7078A /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTableViewController.h; path = ../MainTableViewController.h; sourceTree = "<group>"; };
+		B4635DF7182F186200B7078A /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTableViewController.m; path = ../MainTableViewController.m; sourceTree = "<group>"; };
+		B4635DF9182F18AD00B7078A /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		B4635DFA182F18AD00B7078A /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		B4635E01182F278100B7078A /* TaskObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskObject.h; sourceTree = "<group>"; };
+		B4635E02182F278100B7078A /* TaskObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskObject.m; sourceTree = "<group>"; };
+		B4635E041833843A00B7078A /* TaskDetailsVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailsVCViewController.h; sourceTree = "<group>"; };
+		B4635E051833843A00B7078A /* TaskDetailsVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailsVCViewController.m; sourceTree = "<group>"; };
+		B4635E0718346FBA00B7078A /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
+		B4635E0818346FBA00B7078A /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +127,15 @@
 				B4635DD0182F177100B7078A /* CCAppDelegate.h */,
 				B4635DD1182F177100B7078A /* CCAppDelegate.m */,
 				B4635DD3182F177100B7078A /* Main.storyboard */,
-				B4635DD6182F177100B7078A /* CCViewController.h */,
-				B4635DD7182F177100B7078A /* CCViewController.m */,
+				B4635E0718346FBA00B7078A /* EditTaskViewController.h */,
+				B4635E0818346FBA00B7078A /* EditTaskViewController.m */,
+				B4635E041833843A00B7078A /* TaskDetailsVCViewController.h */,
+				B4635E051833843A00B7078A /* TaskDetailsVCViewController.m */,
+				B4635DF9182F18AD00B7078A /* AddTaskViewController.h */,
+				B4635DFA182F18AD00B7078A /* AddTaskViewController.m */,
+				B4635DF6182F186200B7078A /* MainTableViewController.h */,
+				B4635DF7182F186200B7078A /* MainTableViewController.m */,
+				B4635E00182F276900B7078A /* Model */,
 				B4635DD9182F177100B7078A /* Images.xcassets */,
 				B4635DC8182F177100B7078A /* Supporting Files */,
 			);
@@ -150,6 +169,15 @@
 				B4635DE9182F177100B7078A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B4635E00182F276900B7078A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4635E01182F278100B7078A /* TaskObject.h */,
+				B4635E02182F278100B7078A /* TaskObject.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4635E03182F278100B7078A /* TaskObject.m in Sources */,
 				B4635DD2182F177100B7078A /* CCAppDelegate.m in Sources */,
+				B4635DFB182F18AD00B7078A /* AddTaskViewController.m in Sources */,
 				B4635DCE182F177100B7078A /* main.m in Sources */,
-				B4635DD8182F177100B7078A /* CCViewController.m in Sources */,
+				B4635E0918346FBA00B7078A /* EditTaskViewController.m in Sources */,
+				B4635DF8182F186200B7078A /* MainTableViewController.m in Sources */,
+				B4635E061833843A00B7078A /* TaskDetailsVCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
