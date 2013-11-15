@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSMutableArray *taskArray;
 
 - (IBAction)addTaskButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender;
 
 
 

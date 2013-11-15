@@ -33,6 +33,10 @@
     self.taskDescriptionTextField.text = self.task.description;
     self.datePicker.date = self.task.date;
     
+    //
+    self.taskDescriptionTextField.delegate = self;
+    self.taskTitleTextField.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,5 +56,30 @@
        
   
 }
+
+#pragma mark - TextView and TextField delegate methods:
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    
+    if ([text isEqualToString:@"\n"]) {
+        //method resignFirstResponder makes keyboard disappear - will only disappear after user taps return
+        [self.taskDescriptionTextField resignFirstResponder];
+        
+        return NO;
+    }
+    
+    else return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+    
+    
+
 
 @end

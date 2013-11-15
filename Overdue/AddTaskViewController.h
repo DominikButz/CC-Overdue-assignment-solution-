@@ -17,8 +17,8 @@
 -(void)didAddTask: (TaskObject *) task;
 
 @end
-
-@interface AddTaskViewController : UIViewController <UITextViewDelegate>
+//conform to textview and text field delegates to use methods that make keyboad disappear when return is pressed:
+@interface AddTaskViewController : UIViewController <UITextViewDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) id <AddTaskViewControllerDelegate> delegate;
 

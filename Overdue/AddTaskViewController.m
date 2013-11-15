@@ -29,7 +29,7 @@
 	// Do any additional setup after loading the view.
     
     self.addTaskDescriptionField.delegate = self;
-    
+    self.addTaskTitleField.delegate = self;
     
 }
 
@@ -85,7 +85,7 @@
     
 }
 
-#pragma mark - textviewDelegate
+#pragma mark - textviewDelegate and textfield delegate methods
 
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
@@ -98,6 +98,13 @@
     }
     
     else return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 

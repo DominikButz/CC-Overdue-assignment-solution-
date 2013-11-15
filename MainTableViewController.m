@@ -183,18 +183,9 @@
         // first remove the selected task object from the taskArray
         [self.taskArray removeObjectAtIndex:indexPath.row];
         
-        // initialize a new Mutable array:
-        NSMutableArray *tasksAsPropertyListsNew = [[NSMutableArray alloc]init];
-        
-        // then load each task from the taskArray into a dictionary and add the dictionaries to the new array:
-        for (TaskObject *task in self.taskArray) {
-            NSDictionary *dictionary = [self TaskObjectAsPropertyList:task];
-            
-            [tasksAsPropertyListsNew addObject:dictionary];
-        }
-        //load new array into NSUserDefaults and sync!
-        [[NSUserDefaults standardUserDefaults] setObject:tasksAsPropertyListsNew forKey:TASK_LIST];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+//
+        //
+        [self saveTasks];
         
         // graphical deletion last, otherwise error!
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -211,21 +202,30 @@
 }
 
 
-/*
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    TaskObject * task = [self.taskArray objectAtIndex:fromIndexPath.row];
+    
+    [self.taskArray removeObjectAtIndex:fromIndexPath.row];
+    
+    [self.taskArray insertObject:task atIndex:toIndexPath.row];
+    
+    [self saveTasks];
+    
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
+
+
+// Override to support conditional rearranging of the table view. Need to set to YES if cells should be movable by user:
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+
 {
-    // Return NO if you do not want the item to be re-orderable.
+ 
     return YES;
 }
-*/
+
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -251,6 +251,20 @@
     [self performSegueWithIdentifier:@"toAddTaskVC" sender:sender];
     
     
+}
+
+- (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender {
+    
+    //user can switch manual cell reordering functionality on and off
+    
+    if (self.tableView.editing == YES) {
+        [self.tableView setEditing:NO animated:YES];
+    }
+    
+    else {
+        
+        [self.tableView setEditing:YES animated:YES];
+    }
 }
 
 
@@ -322,18 +336,24 @@
     
     [self.taskArray replaceObjectAtIndex:indexPath.row withObject:task];
     
-    NSMutableArray *tasksAsPropertyListsUpdated = [[NSMutableArray alloc]init];
+    //see helper methods : saves the updated self.taskArry-List into NSUserDefaults:
+    [self saveTasks];
     
-    for (TaskObject *taskObject in self.taskArray) {
-        
-        [tasksAsPropertyListsUpdated addObject:[self TaskObjectAsPropertyList:taskObject]];
-        
+    //need to reload tableview to display changes:
+    [self.tableView reloadData];
+}
+
+-(void)saveTasks
+{
+    NSMutableArray *tasksAsPropertyLists = [[NSMutableArray alloc]init];
+    for (int i=0; i<[self.taskArray count]; i++) {
+        TaskObject *task = self.taskArray[i];
+        [tasksAsPropertyLists addObject:[self TaskObjectAsPropertyList:task]];
     }
     
-    [[NSUserDefaults standardUserDefaults] setObject:tasksAsPropertyListsUpdated forKey:TASK_LIST];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSUserDefaults standardUserDefaults] setObject:tasksAsPropertyLists forKey:TASK_LIST];
+    [[NSUserDefaults standardUserDefaults]synchronize ];
     
-    [self.tableView reloadData];
 }
 
 #pragma mark - AddTaskVCDelegate methods:

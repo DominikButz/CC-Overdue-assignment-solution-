@@ -44,6 +44,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="94s-52-w5B">
+                        <barButtonItem key="leftBarButtonItem" title="Reorder" id="2wh-kU-f2g">
+                            <connections>
+                                <action selector="reorderButtonPressed:" destination="VPd-FA-FpU" id="Ihf-Za-Qp3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add task" id="AJ2-fq-c90">
                             <connections>
                                 <action selector="addTaskButtonPressed:" destination="VPd-FA-FpU" id="xCU-Vo-S7c"/>
